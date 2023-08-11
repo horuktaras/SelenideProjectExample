@@ -80,9 +80,6 @@
                                 <base.url>https://www.saucedemo.com</base.url>
                                 <report.output>target/test-output/extent-report.html</report.output>
                             </systemPropertyVariables>
-                            <parallel>classes</parallel>
-                            <parallel>methods</parallel>
-                            <useUnlimitedThreads>false</useUnlimitedThreads>
                         </configuration>
                         <executions>
                             <execution>

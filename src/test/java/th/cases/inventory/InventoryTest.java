@@ -18,12 +18,13 @@ public class InventoryTest extends BaseTest {
                 .login(user.getName(), user.getPassword());
     }
 
-    @Test(dataProvider = "Products", dataProviderClass = ProductDataProvider.class)
+    @Test(testName = "Check product exists in inventory page",
+            dataProvider = "Products", dataProviderClass = ProductDataProvider.class)
     public void checkProductAppeared(int index, ProductItem productItem) {
         inventoryPage.checkProductExistsOnBasePage(index, productItem);
     }
 
-    @Test
+    @Test(testName = "Check product added to cart")
     public void checkProductsAddedToCart() {
         inventoryPage
                 .applyProduct(2)

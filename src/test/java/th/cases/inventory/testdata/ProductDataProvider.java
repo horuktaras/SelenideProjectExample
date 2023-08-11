@@ -6,7 +6,7 @@ import org.testng.annotations.DataProvider;
 public class ProductDataProvider extends AbstractDataProvider {
 
     @DataProvider(name = "Products")
-    public Object[][] getProductData() {
+    public static Object[][] getProductData() {
         ProductItem[] productItems = defaultProducts();
         Object[][] data = new Object[productItems.length][2];
 
@@ -14,12 +14,11 @@ public class ProductDataProvider extends AbstractDataProvider {
             data[i][0] = i;  // Index
             data[i][1] = productItems[i];  // ProductItem
         }
-
         return data;
     }
 
 //todo move to json
-    private ProductItem[] defaultProducts() {
+    private static ProductItem[] defaultProducts() {
         return new ProductItem[]{
                 new ProductItem(
                         "/static/media/sauce-backpack-1200x1500.0a0b85a3.jpg",

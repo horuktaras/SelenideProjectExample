@@ -1,8 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="ProductsTestSuite">
-    <test name="ProductsTest">
+    <test name="Login Test">
         <classes>
             <class name="th.cases.login.LoginTest"/>
+        </classes>
+    </test>
+    <test name="Inventory Test">
+        <classes>
             <class name="th.cases.inventory.InventoryTest"/>
         </classes>
     </test>
