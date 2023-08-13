@@ -31,7 +31,7 @@ public class InventoryPage implements IPage<InventoryPage> {
         return checkProductName(index, productItem.getName())
                 .checkProductDescription(index, productItem.getDescription())
                 .checkProductPrice(index, productItem.getPrice())
-                .checkProductImage(index, productItem.getImages());
+                .checkProductImage(index, productItem.getImage());
     }
 
     @Step("Apply product by {index}")

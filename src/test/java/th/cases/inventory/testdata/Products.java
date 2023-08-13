@@ -1,15 +1,16 @@
-package th.pages.login.data;
+package th.cases.inventory.testdata;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
-    private String name;
-    private String password;
+public class Products {
+    private List<ProductItem> products;
 }
