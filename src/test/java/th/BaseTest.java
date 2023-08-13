@@ -5,17 +5,17 @@ import com.codeborne.selenide.Selenide;
 import commons.ScreenResolution;
 import constants.Property;
 import helper.PropertyReader;
+import io.qameta.allure.testng.AllureTestNg;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import th.pages.login.data.User;
-import th.utils.listeners.CustomTestNGListener;
 
-@Listeners(CustomTestNGListener.class)
+@Listeners(AllureTestNg.class)
 public class BaseTest {
 
-    protected User user;
+    protected static User user;
 
     @Parameters({"name", "password"})
     @BeforeSuite
@@ -24,12 +24,6 @@ public class BaseTest {
         Configuration.browserSize = ScreenResolution.currentScreenResolution();
         Configuration.headless = Boolean.parseBoolean(PropertyReader.get(Property.HEADLESS));
         Configuration.timeout = Integer.parseInt(PropertyReader.get(Property.TIMEOUT_MILLS));
-        handleUser(name, password);
-    }
-
-    private void handleUser(String name, String password) {
-        if (name == null) throw new RuntimeException("Parameter 'user' not specified or invalid");
-        if (password == null) throw new RuntimeException("Parameter 'password' not specified or invalid");
         user = new User(name, password);
     }
 

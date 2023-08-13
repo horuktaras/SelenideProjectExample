@@ -13,6 +13,7 @@ Before you begin, ensure you have met the following requirements:
 * Java JDK (8 or higher) installed
 * Apache Maven installed
 * Git installed
+* Allure installed
 
 ## Getting Started
 To get started with this project, follow these steps:
@@ -26,5 +27,15 @@ cd SelenideProjectExample
 ```
 Compile and run the tests using Maven:
 ```shell
-mvn clean verify -Ptest -Dname="standard_user" -Dpassword="secret_sauce"
+mvn clean verify -Ptest -Dname="standard_user" -Dpassword="secret_sauce" -Dheadless="true"
+```
+
+Generate Allure report
+```shell
+allure generate target/allure-results/ -o target/allure-report/
+```
+
+Open Allure report
+```shell
+allure open target/allure-report/     
 ```

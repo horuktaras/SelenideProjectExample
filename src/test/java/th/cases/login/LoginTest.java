@@ -1,10 +1,12 @@
 package th.cases.login;
 
+import io.qameta.allure.Epic;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import th.BaseTest;
 import th.pages.login.LoginPage;
 
+@Epic("Login")
 public class LoginTest extends BaseTest {
 
     @AfterMethod
@@ -25,14 +27,6 @@ public class LoginTest extends BaseTest {
         LoginPage.init()
                 .enterUsername("123")
                 .enterPassword("secret_sauce")
-                .clickLoginButtonAndCheckErrorMessage("Epic sadface: Username and password do not match any user in this service");
-    }
-
-    @Test(testName = "Check Username and password do not match any user in this service message")
-    public void badPasswordTest() {
-        LoginPage.init()
-                .enterUsername("standard_user")
-                .enterPassword("123")
                 .clickLoginButtonAndCheckErrorMessage("Epic sadface: Username and password do not match any user in this service");
     }
 

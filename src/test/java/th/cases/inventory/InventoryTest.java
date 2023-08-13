@@ -1,5 +1,6 @@
 package th.cases.inventory;
 
+import io.qameta.allure.Epic;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import th.BaseTest;
@@ -8,6 +9,7 @@ import th.cases.inventory.testdata.ProductItem;
 import th.pages.inventory.InventoryPage;
 import th.pages.login.LoginPage;
 
+@Epic("Inventory")
 public class InventoryTest extends BaseTest {
 
     private InventoryPage inventoryPage;
